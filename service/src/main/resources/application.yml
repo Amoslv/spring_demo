@@ -1,0 +1,23 @@
+#数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/sql_test?characterEncoding=utf8
+    username: root
+    password: lv1031
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*/*.xml
+  typeEnumsPackage: com.tsign.demo/*/*/enums
+  global-config:
+    # 数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      insert-strategy: ignored
+      update-strategy: ignored
+
+# Logger Config
+logging:
+  level:
+    com.baomidou.mybatisplus.samples.quickstart: debug
